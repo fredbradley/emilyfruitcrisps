@@ -4,7 +4,7 @@ class FredGoogleMap {
 
 	function __construct() {
 			// Hook into the 'init' action
-			add_action( 'init', array($this, 'fb_googlemap_post_type', 0 ));
+			add_action( 'init', array($this, 'fb_googlemap_post_type'));
 	}
 	
 	
