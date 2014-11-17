@@ -6,7 +6,14 @@ class FredGoogleMap {
 			// Hook into the 'init' action
 			add_action( 'init', array($this, 'fb_googlemap_post_type'));
 			add_filter( 'rwmb_meta_boxes', array($this, 'custom_meta_boxes'));
+			add_action('wp_enqueue_scripts', array($this,'enqueue_scripts'));
 
+
+	}
+	
+	function enqueue_scripts() {
+		wp_enqueue_script( 'mapsapi', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3.0.0', true );
+		wp_enqueue_script('fred-library', dirname(__FILE__).'/javascripts/library.js', array('jquery'), '1.0.0', true);
 	}
 	
 	function custom_meta_boxes($meta_boxes) {
