@@ -43,7 +43,7 @@ class FredGoogleMap {
 				array(
 					'name' => "Icon Image",
 					'id' => $prefix . "shop_icon",
-					'type' => 'file',
+					'type' => 'thickbox_image',
 				)
 			)
 		);
