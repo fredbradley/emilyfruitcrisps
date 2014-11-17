@@ -1,3 +1,6 @@
+$ = jQuery;
+$.noConflict();
+
 var pais;
 jQuery(document).ready(function($){
 	var distancia;
