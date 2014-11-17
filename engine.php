@@ -43,7 +43,9 @@ class FredGoogleMap {
 				array(
 					'name' => "Icon Image",
 					'id' => $prefix . "shop_icon",
-					'type' => 'thickbox_image',
+					'type' => 'file_advanced',
+					'max_file_uploads' => 1,
+					'desc' => "Just One Images is allowed"
 				)
 			)
 		);
