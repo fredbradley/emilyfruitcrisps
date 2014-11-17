@@ -1,5 +1,5 @@
 var pais;
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	var distancia;
 	$('#intro a').click(function(e){
 		var ctr = $(this).data('ctr');
