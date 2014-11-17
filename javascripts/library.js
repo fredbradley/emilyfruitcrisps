@@ -2,7 +2,7 @@ $ = jQuery;
 $.noConflict();
 
 var pais;
-jQuery(document).ready(function($){
+jQuery(document).ready(function(){
 	var distancia;
 	$('#intro a').click(function(e){
 		var ctr = $(this).data('ctr');
@@ -25,26 +25,18 @@ jQuery(document).ready(function($){
 		$('main, header nav, .social').fadeIn(500);
 	});
 
-	$('.ctr_01').click(function(e){
+	$(document).ready(function(e){
 		e.preventDefault();
 		pais = "uk";		
 		$('#cp_postcode').attr('placeholder','CITY OR POSTCODE');
 		$('#contact div form legend').html('You can telephone us on 02087884926 or email us at hello@unocodrinks.com <br /><br />Or, you can just enter your message here.');
 	})
 
-	$('.ctr_02').click(function(e){
-		e.preventDefault();
-		pais = "usa";
-		$('#cp_postcode').attr('placeholder','CITY OR ZIPCODE');
-		$('#contact div form legend').html('You can telephone us on 718-628-3682 or email us at hello@unocodrinks.com <br /><br />Or, you can just enter your message here.');
-		$('.buy-online').hide();
-	})	
-
 });
 
 jQuery(window).load(function($){
 
-	jQuery(window).stellar();
+//	$(window).stellar();
 
 /*----------------------------------------------------------------
 	Menu
@@ -61,49 +53,7 @@ jQuery(window).load(function($){
 		Cufon.refresh();
 	});
 
-/*----------------------------------------------------------------
-	Tiny
-----------------------------------------------------------------*/
-	$('#plc').tinyscrollbar();
 
-/*----------------------------------------------------------------
-	Carousel
-----------------------------------------------------------------*/
-	$('.crsl').jcarousel({
-		'wrap': 'circular',
-		'animation': {
-			'duration' :600
-		}
-	});
-
-	$('.crsl_prev').on('active.jcarouselcontrol', function() {
-		$(this).removeClass('inactive');
-	}).on('inactive.jcarouselcontrol', function() {
-		$(this).addClass('inactive');
-	}).jcarouselControl({
-		target: '-=1'
-	});
-
-	$('.crsl_next').on('active.jcarouselcontrol', function() {
-		$(this).removeClass('inactive');
-	}).on('inactive.jcarouselcontrol', function() {
-		$(this).addClass('inactive');
-	}).jcarouselControl({
-		target: '+=1'
-	});
-
-/*----------------------------------------------------------------
-	Products
-----------------------------------------------------------------*/
-	$('#bt_nutri').click(function(e){
-		e.preventDefault();
-		$('#nutri').fadeIn(150);
-	});
-
-	$('#nutri a').click(function(e){
-		e.preventDefault();
-		$('#nutri').fadeOut(150);
-	});
 
 /*----------------------------------------------------------------
 	Contact us
