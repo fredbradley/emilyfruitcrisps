@@ -39,7 +39,7 @@ jQuery(document).ready(function($){
 
 });
 
-$(window).load(function(){
+jQuery(window).load(function($){
 
 	$(window).stellar();
 
