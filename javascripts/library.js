@@ -41,7 +41,7 @@ jQuery(document).ready(function($){
 
 jQuery(window).load(function($){
 
-	$(window).stellar();
+	jQuery(window).stellar();
 
 /*----------------------------------------------------------------
 	Menu
@@ -185,7 +185,7 @@ jQuery(window).load(function($){
 	});
 
 	function ct(){
-		var xMap = $(window).width() - 350;
+		var xMap = jQuery(window).width() - 350;
 		//$('#map_canvas').width(xMap);
 		// $('#notfound').css({'left':xMap/2}).show();
 	};
