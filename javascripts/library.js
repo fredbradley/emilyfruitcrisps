@@ -42,11 +42,11 @@ jQuery(window).load(function(jQuery){
 
 
 
-	jQuery('input:text, textarea').focus(function(e){
+	jQuery('input:text, textarea').focus(function(){
 		valor = jQuery(this).data('dft');
 		if(jQuery(this).val() != '' && jQuery(this).val() != valor) { return false; }
 		jQuery(this).attr('value','');
-	}).blur(function(e){
+	}).blur(function(){
 		if(jQuery(this).val() != '' && jQuery(this).val() != valor) { return false; }
 		jQuery(this).val(valor);
 	});
