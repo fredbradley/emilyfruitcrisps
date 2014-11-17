@@ -24,13 +24,9 @@ jQuery(document).ready(function(){
 		jQuery('#intro').fadeOut(500);
 		jQuery('main, header nav, .social').fadeIn(500);
 	});
-
-	jQuery(document).ready(function(e){
-		e.preventDefault();
-		pais = "uk";		
+		pais = 'uk';
 		jQuery('#cp_postcode').attr('placeholder','CITY OR POSTCODE');
 		jQuery('#contact div form legend').html('You can telephone us on 02087884926 or email us at hello@unocodrinks.com <br /><br />Or, you can just enter your message here.');
-	})
 
 });
 
@@ -42,7 +38,7 @@ jQuery(window).load(function(jQuery){
 /*----------------------------------------------------------------
 	Contact us
 ----------------------------------------------------------------*/
-	var validateEmail = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+	var validateEmail = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}pais/i);
 
 
 
