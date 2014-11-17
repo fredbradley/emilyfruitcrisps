@@ -27,6 +27,26 @@ class FredGoogleMap {
 				),
 			)
 		);
+		$meta_boxes[] = array(
+			'id' => "shop_display_address",
+			'title' => "Display Box",
+			'pages' => array('wheretobuy'),
+			'context' => 'normal',
+			'priority' => 'high',
+			'fields' => array(
+				array(
+					'name' => "Full Address", 
+					'id' => $prefix . "address",
+					'type' => 'textarea', 
+					'placeholder' => __('The full address as you wish it to be displayed', 'fredbradley')
+				),	
+				array(
+					'name' => "Icon Image",
+					'id' => $prefix . "shop_icon",
+					'type' => 'file_upload',
+				)
+			)
+		);
 
 		
 		return $meta_boxes;
