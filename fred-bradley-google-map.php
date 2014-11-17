@@ -8,3 +8,8 @@
  * Author URI: http://www.fredbradley.uk
  * License: GPL2
  */
+ 
+require_once('update.php');
+require_once('engine.php');
+
+$fb_gm = new FredGoogleMap();
