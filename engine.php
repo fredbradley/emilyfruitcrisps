@@ -13,21 +13,6 @@ class FredGoogleMap {
 		$prefix = "emily_meta_";
 		
 		$meta_boxes[] = array(
-			'id' => 'shop_location_geodata',
-			'title' => "Shop Post Code",
-			'pages' => array('wheretobuy'),
-			'context' => "side",
-			'priority' => 'high',
-			'fields' => array(
-				array(
-					'name' => "Post Code",
-					'id' => $prefix . "post_code",
-					'type' => 'text',
-					'placeholder' => __( 'WC1A 1BS', 'fredbradley' ),
-				),
-			)
-		);
-		$meta_boxes[] = array(
 			'id' => "shop_display_address",
 			'title' => "Display Box",
 			'pages' => array('wheretobuy'),
@@ -40,13 +25,6 @@ class FredGoogleMap {
 					'type' => 'textarea', 
 					'placeholder' => __('The full address as you wish it to be displayed', 'fredbradley')
 				),	
-				array(
-					'name' => "Icon Image",
-					'id' => $prefix . "shop_icon",
-					'type' => 'file_advanced',
-					'max_file_uploads' => 1,
-					'desc' => "Just One Images is allowed"
-				)
 			)
 		);
 
@@ -76,7 +54,7 @@ class FredGoogleMap {
 			'label'               => __( 'wheretobuy', 'emilyfruitcrisps' ),
 			'description'         => __( 'Where to buy Emily Fruit Crisps', 'emilyfruitcrisps' ),
 			'labels'              => $labels,
-			'supports'            => array( 'title', ),
+			'supports'            => array( 'title','thumbnail' ),
 			'hierarchical'        => false,
 			'public'              => true,
 			'show_ui'             => true,
