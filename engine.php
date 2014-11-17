@@ -5,9 +5,32 @@ class FredGoogleMap {
 	function __construct() {
 			// Hook into the 'init' action
 			add_action( 'init', array($this, 'fb_googlemap_post_type'));
+			add_filter( 'rwmb_meta_boxes', array($this, 'custom_meta_boxes'));
+
 	}
 	
-	
+	function custom_meta_boxes($meta_boxes) {
+		$prefix = "emily_meta_";
+		
+		$meta_boxes[] = array(
+			'id' => 'shop_location_geodata',
+			'title' => "Shop Post Code",
+			'pages' => array('wheretobuy'),
+			'context' => "side",
+			'priority' => 'high',
+			'fields' => array(
+				array(
+					'name' => "Post Code",
+					'id' => $prefix . "post_code",
+					'type' => 'text',
+					'placeholder' => __( 'WC1A 1BS', 'fredbradley' ),
+				),
+			)
+		);
+
+		
+		return $meta_boxes;
+	}
 	
 	// Register Custom Post Type
 	function fb_googlemap_post_type() {
