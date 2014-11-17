@@ -4,39 +4,39 @@ $.noConflict();
 var pais;
 jQuery(document).ready(function(){
 	var distancia;
-	$('#intro a').click(function(e){
-		var ctr = $(this).data('ctr');
+	jQuery('#intro a').click(function(e){
+		var ctr = jQuery(this).data('ctr');
 		e.preventDefault();
 
 		if(ctr == '01'){
-			$('.USA').remove();
+			jQuery('.USA').remove();
 		}else{
-			$('.UK').remove();
+			jQuery('.UK').remove();
 		}
 
 		setPlaces(null);
 
-		$('#products img').attr('src', base_url+'img/'+ctr+'/products_healthy.png');
-		$('#home div').css({'background':'url('+base_url+'img/'+ctr+'/products.png) no-repeat center center'});
+		jQuery('#products img').attr('src', base_url+'img/'+ctr+'/products_healthy.png');
+		jQuery('#home div').css({'background':'url('+base_url+'img/'+ctr+'/products.png) no-repeat center center'});
 
-		$('html, body').animate({scrollTop: 0}, 10);
+		jQuery('html, body').animate({scrollTop: 0}, 10);
 
-		$('#intro').fadeOut(500);
-		$('main, header nav, .social').fadeIn(500);
+		jQuery('#intro').fadeOut(500);
+		jQuery('main, header nav, .social').fadeIn(500);
 	});
 
-	$(document).ready(function(e){
+	jQuery(document).ready(function(e){
 		e.preventDefault();
 		pais = "uk";		
-		$('#cp_postcode').attr('placeholder','CITY OR POSTCODE');
-		$('#contact div form legend').html('You can telephone us on 02087884926 or email us at hello@unocodrinks.com <br /><br />Or, you can just enter your message here.');
+		jQuery('#cp_postcode').attr('placeholder','CITY OR POSTCODE');
+		jQuery('#contact div form legend').html('You can telephone us on 02087884926 or email us at hello@unocodrinks.com <br /><br />Or, you can just enter your message here.');
 	})
 
 });
 
-jQuery(window).load(function($){
+jQuery(window).load(function(jQuery){
 
-//	$(window).stellar();
+//	jQuery(window).stellar();
 
 
 /*----------------------------------------------------------------
@@ -46,25 +46,25 @@ jQuery(window).load(function($){
 
 
 
-	$('input:text, textarea').focus(function(e){
-		valor = $(this).data('dft');
-		if($(this).val() != '' && $(this).val() != valor) { return false; }
-		$(this).attr('value','');
+	jQuery('input:text, textarea').focus(function(e){
+		valor = jQuery(this).data('dft');
+		if(jQuery(this).val() != '' && jQuery(this).val() != valor) { return false; }
+		jQuery(this).attr('value','');
 	}).blur(function(e){
-		if($(this).val() != '' && $(this).val() != valor) { return false; }
-		$(this).val(valor);
+		if(jQuery(this).val() != '' && jQuery(this).val() != valor) { return false; }
+		jQuery(this).val(valor);
 	});
 
 
-	$(document).on('click', '#bt_find', function(e){
+	jQuery(document).on('click', '#bt_find', function(e){
 		e.preventDefault();
-		distancia = $('#Distance').val();
-		codeAddress($('#cp_postcode').val()+","+pais);
+		distancia = jQuery('#Distance').val();
+		codeAddress(jQuery('#cp_postcode').val()+","+pais);
 	});
 
-	$("#cp_postcode").keyup(function(event){
+	jQuery("#cp_postcode").keyup(function(event){
 		if(event.keyCode == 13){
-				$("#bt_find").click();
+				jQuery("#bt_find").click();
 		}
 	});
 
@@ -74,15 +74,15 @@ jQuery(window).load(function($){
 	Map Size
 ----------------------------------------------------------------*/
 	ct();
-	$(window).resize(function(){
+	jQuery(window).resize(function(){
 		ct();
 		map.fitBounds(bounds);
 	});
 
 	function ct(){
 		var xMap = jQuery(window).width() - 350;
-		//$('#map_canvas').width(xMap);
-		// $('#notfound').css({'left':xMap/2}).show();
+		//jQuery('#map_canvas').width(xMap);
+		// jQuery('#notfound').css({'left':xMap/2}).show();
 	};
 
 /*----------------------------------------------------------------
@@ -136,7 +136,7 @@ function codeAddress(address) {
 			if(address == "UK" || address == "uk"){
 				map.setZoom(5);
 			}else{
-				map.setZoom(zoom[$('#Distance').val()]);
+				map.setZoom(zoom[jQuery('#Distance').val()]);
 			}
 			map.setCenter(results[0].geometry.location);
 			map.fitBounds(results[0].geometry.location); 	
@@ -145,10 +145,10 @@ function codeAddress(address) {
 			
 		} else {
 			// setPlaces(null);
-			$('#plc').hide();
-			$('#notfound').fadeIn(500);
+			jQuery('#plc').hide();
+			jQuery('#notfound').fadeIn(500);
 			setTimeout(function(){
-				$('#notfound').fadeOut(500);
+				jQuery('#notfound').fadeOut(500);
 			},2500);
 			return null;
 		}
@@ -164,8 +164,8 @@ function clearOverlays() {
 
 function setPlaces(p) {
 
-	$('#plc').hide();
-	$('#plc .viewport .overview ul li').hide();
+	jQuery('#plc').hide();
+	jQuery('#plc .viewport .overview ul li').hide();
 
 	var x = [];
 	var y = [];
@@ -184,13 +184,13 @@ function setPlaces(p) {
 	var nomeEstabeleciomento = [];
 	var postid 				 = [];
 	var t = 0;
-	$('.mrk').each(function(){
+	jQuery('.mrk').each(function(){
 		
-		var lat = $(this).children('.boxmap').find('.lat').text();
-		var lng = $(this).children('.boxmap').find('.lng').text();
-		var nom = $(this).children('.boxmap').find('strong').text();
-		var end = $(this).children('.boxmap').find('p').attr('rel');
-		var id  = $(this).children('.boxmap').attr('rel');
+		var lat = jQuery(this).children('.boxmap').find('.lat').text();
+		var lng = jQuery(this).children('.boxmap').find('.lng').text();
+		var nom = jQuery(this).children('.boxmap').find('strong').text();
+		var end = jQuery(this).children('.boxmap').find('p').attr('rel');
+		var id  = jQuery(this).children('.boxmap').attr('rel');
 
 		
 		if (p != null) {
@@ -200,11 +200,11 @@ function setPlaces(p) {
 			var dist = getDistance(p1, p2);
 
 			if (dist > 3200) {
-				$(this).hide();
+				jQuery(this).hide();
 				return 1;
 			}
 			else {
-				$(this).show();
+				jQuery(this).show();
 			}
 		}
 
@@ -219,31 +219,31 @@ function setPlaces(p) {
 		postid.push(id);
 
 		// List event on map
-		$(this).click(function(e){
+		jQuery(this).click(function(e){
 			e.preventDefault();
 			google.maps.event.trigger(gmarkers[num], 'click');
 		});
 
 		if(x){
-			$(this).attr('rel','hover-'+t);
+			jQuery(this).attr('rel','hover-'+t);
 			t++;
 		}
 
 		// Animate pin
-		$(this).hover(function(){
+		jQuery(this).hover(function(){
 			// gmarkers[num].setAnimation(google.maps.Animation.BOUNCE);
 		},function(){
 			gmarkers[num].setAnimation(null);
 		});
 		
 	});
-	$('#plc').tinyscrollbar_update('relative');
+	jQuery('#plc').tinyscrollbar_update('relative');
 	//show notfound is not adress around search
 	if(x.length == 0){
-			$('#plc').hide();
-			$('#notfound').fadeIn(500);
+			jQuery('#plc').hide();
+			jQuery('#notfound').fadeIn(500);
 			setTimeout(function(){
-				$('#notfound').fadeOut(500);
+				jQuery('#notfound').fadeOut(500);
 			},2500);
 			return null;		
 	}
@@ -278,11 +278,11 @@ function setPlaces(p) {
 				map.panTo(new google.maps.LatLng(x[i],y[i]));
 				// infowindow.setContent("<p>"+nomeEstabeleciomento[i]+"<br>"+enderecos[i]+"</p>");
     //     		infowindow.open(map, marker);
-    			$('#plc .viewport .overview ul li').hide();
-    			$('#plc').show().tinyscrollbar({ scroll: false });;
-    			$('#plc .'+postid[i]).show();
+    			jQuery('#plc .viewport .overview ul li').hide();
+    			jQuery('#plc').show().tinyscrollbar({ scroll: false });;
+    			jQuery('#plc .'+postid[i]).show();
 
-				$('li[rel="hover-'+i+'"]').hover(function(){
+				jQuery('li[rel="hover-'+i+'"]').hover(function(){
 					marker.setAnimation(google.maps.Animation.BOUNCE);
 				},function(){
 					marker.setAnimation(null);
@@ -327,10 +327,10 @@ function find_closest_marker( event ) {
     }
 	//show notfound is not adress around search
 	if(!pinproximo){
-			$('#plc').hide();
-			$('#notfound').fadeIn(500);
+			jQuery('#plc').hide();
+			jQuery('#notfound').fadeIn(500);
 			setTimeout(function(){
-				$('#notfound').fadeOut(500);
+				jQuery('#notfound').fadeOut(500);
 			},2500);
 			return null;		
 	}
