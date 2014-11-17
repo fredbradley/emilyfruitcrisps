@@ -10,6 +10,7 @@
  */
  
 require_once('update.php');
+require_once('required_plugins/required_plugins.php');
 require_once('engine.php');
 
 $fb_gm = new FredGoogleMap();

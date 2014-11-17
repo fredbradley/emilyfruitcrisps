@@ -21,7 +21,7 @@
  */
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'fredbradley_required_plugins' );
+add_action( 'tgmpa_register', 'emilyfruitcrisps_required_plugins' );
 /**
  * Register the required plugins for this theme.
  *
@@ -34,7 +34,7 @@ add_action( 'tgmpa_register', 'fredbradley_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function fredbradley_required_plugins() {
+function emilyfruitcrisps_required_plugins() {
 
     /**
      * Array of plugin arrays. Required keys are name and slug.
@@ -63,32 +63,12 @@ function fredbradley_required_plugins() {
             'external_url'       => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // If set, overrides default API URL and points to an external URL.
         ),
 */
-        // This is an example of how to include a plugin from the WordPress Plugin Repository.
-        array(
-            'name'      => 'BuddyPress',
-            'slug'      => 'buddypress',
-            'required'  => false,
-        ),
-        array(
-        	'name' => 'Post Thumbnail Editor', 
-        	'slug' => 'post-thumbnail-editor',
-        	'required' => false
-        ),
+        // This is an example of how to include a plugin from the WordPress Plugin Repository.        
         array(
         	'name' => "RWLIS's Meta Box",
         	'slug' => 'meta-box',
         	'required' => false
 		),
-		array(
-			'name' => "Jetpack by Wordpress",
-			'slug' => 'jetpack',
-			'required' => false
-		),
-		array(
-			'name' => "Redirection Plugin",
-			'slug' => 'redirection',
-			'required' => false
-		)
     );
 
     /**
