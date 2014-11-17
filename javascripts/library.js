@@ -38,70 +38,12 @@ jQuery(window).load(function($){
 
 //	$(window).stellar();
 
-/*----------------------------------------------------------------
-	Menu
-----------------------------------------------------------------*/
-	$('nav a, .bt_more, #logo, #bt_wtb').click(function(e){
-		var mn = $(this).attr('class').split('_')[1];
-		if($(this).hasClass('bt_more') || $(this).attr('id') == 'logo'){
-			var mn = $(this).data('more').split('_')[1];
-		}
-		var xw = $('#'+mn).offset().top - 70;
-		e.preventDefault();
-
-		$('body,html').stop(true, false).animate({scrollTop: xw+'px'}, {'duration':800, 'easing':'easeInOutCirc'});
-		Cufon.refresh();
-	});
-
-
 
 /*----------------------------------------------------------------
 	Contact us
 ----------------------------------------------------------------*/
 	var validateEmail = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
 
-	$('#contact form').on('submit', function(){
-		var hasError = false;
-
-		$('.error').removeClass('error');
-
-		var subject = $("#cp_subject").val();
-		if (subject == '' || subject == 'Type your subject here.') {
-			$("#cp_nome").addClass('error');
-			$('#contact form p').addClass('error').text('The subject is required');
-			hasError = true;
-		}
-
-		var email = $("#cp_email").val();
-		if (!validateEmail.test(email)) {
-			$("#cp_email").addClass('error');
-			$('#contact form p').addClass('error').text('Invalid email address');
-			hasError = true;
-		}
-
-		var msg = $("#cp_msg").val();
-		if (msg == '' || msg == 'Type your message here.') {
-			$("#cp_msg").addClass('error');
-			$('#contact form p').addClass('error').text('The message is required');
-			hasError = true;
-		}
-
-		if (hasError) {
-			return false;
-		}
-
-		$('#contact form p').addClass('error').text('');
-	});
-
-	$('#contact form').ajaxForm({
-		target: $('#contact form p'),
-		beforeSubmit: function() {
-			$('.loading').show();
-		},
-		success: function() {
-			$('.loading').hide();
-		}
-	});
 
 
 	$('input:text, textarea').focus(function(e){
