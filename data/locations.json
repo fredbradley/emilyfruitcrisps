@@ -1,0 +1,46 @@
+[
+
+    {
+        "id":"19",
+        "name":"Chipotle Chanhassen",
+        "lat":"44.858736",
+        "lng":"-93.533661",
+        "address":"560 W 79th",
+        "address2":"",
+        "city":"Chanhassen",
+        "state":"MN",
+        "postal":"55317",
+        "phone":"952-294-0301",
+        "web":"http:\/\/www.chipotle.com",
+        "hours1":"Mon-Sun 11am-10pm",
+        "hours2":"",
+        "hours3":""
+    },
+    {
+        "id":"20",
+        "name":"Chipotle St. Paul",
+        "lat":"44.945127",
+        "lng":"-93.095368",
+        "address":"29 5th St West",
+        "address2":"",
+        "city":"St. Paul",
+        "state":"MN",
+        "postal":"55102",
+        "phone":"651-291-5411",
+        "web":"http:\/\/www.chipotle.com",
+        "hours1":"Mon-Sun 11am-10pm",
+        "hours2":"",
+        "hours3":""
+    },
+    {
+	    "id":"21",
+	    "name":"Fred Foods",
+	    "lat":"51.30617654",
+	    "lng":"-0.56498765",
+	    "city":"Woking",
+	    "postal":"GU22 0BQ",
+	    "state":"Surrey",
+	    "address":"Fred Foods Hawthorn Road",
+	    "hours1":"Monday 4pm"
+	}
+]

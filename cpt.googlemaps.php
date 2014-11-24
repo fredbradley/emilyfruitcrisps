@@ -21,7 +21,7 @@ function fb_googlemap_post_type() {
 		'label'               => __( 'wheretobuy', 'emilyfruitcrisps' ),
 		'description'         => __( 'Where to buy Emily Fruit Crisps', 'emilyfruitcrisps' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', ),
+		'supports'            => array( 'title', 'thumbnail'),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
